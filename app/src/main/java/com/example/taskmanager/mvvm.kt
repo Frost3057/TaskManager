@@ -35,12 +35,8 @@ class taskViewModel(private val dao:TaskDao):ViewModel() {
                             isEditing = false,
                             title = "",
                             description = ""
-
                         )
                     }
-
-
-
                 }
             }
             is TaskEvent.updateTask ->{
@@ -57,11 +53,8 @@ class taskViewModel(private val dao:TaskDao):ViewModel() {
                 _state.update {
                     it.copy(
                         isEditing = false
-
                     )
                 }
-
-
             }
             is TaskEvent.setDescription -> {
                 _state.update {
@@ -69,7 +62,6 @@ class taskViewModel(private val dao:TaskDao):ViewModel() {
                         description = change.description
                     )
                 }
-
             }
             is TaskEvent.setTITLE -> {
                 _state.update {
@@ -77,7 +69,6 @@ class taskViewModel(private val dao:TaskDao):ViewModel() {
                         title = change.title
                     )
                 }
-
             }
             TaskEvent.showAlert -> {
                 _state.update {
@@ -87,15 +78,5 @@ class taskViewModel(private val dao:TaskDao):ViewModel() {
                 }
             }
         }
-
-
-
     }
-
-
-
-
-
-
-
 }
